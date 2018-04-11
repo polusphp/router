@@ -1,0 +1,26 @@
+{
+    "name": "polus/router",
+    "description": "router polus",
+    "homepage": "https://github.com/polusphp/router",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Andreas Sundqvist",
+            "email": "andreas@oak-valley.se"
+        }
+    ],
+    "require": {
+        "php": ">=7.2.0",
+        "psr/http-message": "~1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Polus\\Router\\": "src/"
+        }
+    },
+    "suggest": {
+        "polus/aura-router": "Routing with Aura.Router",
+        "polus/symfony-router": "Routing with Symfony Routing",
+        "polus/fast-router": "Routing with FastRoute"
+    }
+}
