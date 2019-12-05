@@ -12,9 +12,9 @@ class RouterMiddleware implements MiddlewareInterface
 {
     public const ATTRIBUTE_KEY = 'polus:route';
 
-    protected RouterDispatcherInterface $routerDispatcher;
+    protected RouterDispatcher $routerDispatcher;
 
-    public function __construct(RouterDispatcherInterface $routerDispatcher)
+    public function __construct(RouterDispatcher $routerDispatcher)
     {
         $this->routerDispatcher = $routerDispatcher;
     }

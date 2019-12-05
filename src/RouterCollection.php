@@ -3,7 +3,7 @@ declare(strict_types=1);
 
 namespace Polus\Router;
 
-interface RouterCollectionInterface
+interface RouterCollection
 {
     public function get(string $route, $handler);
     public function put(string $route, $handler);

@@ -3,7 +3,7 @@ declare(strict_types=1);
 
 namespace Polus\Router;
 
-interface RouteInterface
+interface Route
 {
     public function getStatus(): int;
     public function getAllows(): array;
