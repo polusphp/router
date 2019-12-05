@@ -10,8 +10,9 @@ use Psr\Http\Server\RequestHandlerInterface;
 
 class RouterMiddleware implements MiddlewareInterface
 {
-    /** @var RouterDispatcherInterface */
-    protected $routerDispatcher;
+    public const ATTRIBUTE_KEY = 'polus:route';
+
+    protected RouterDispatcherInterface $routerDispatcher;
 
     public function __construct(RouterDispatcherInterface $routerDispatcher)
     {
@@ -19,12 +20,7 @@ class RouterMiddleware implements MiddlewareInterface
     }
 
     /**
-     * Process an incoming server request and return a response, optionally delegating
-     * response creation to a handler.
-     *
-     * @param ServerRequestInterface $request
-     * @param RequestHandlerInterface $handler
-     * @return ResponseInterface
+     * @inheritDoc
      */
     public function process(ServerRequestInterface $request, RequestHandlerInterface $handler): ResponseInterface
     {
@@ -34,7 +30,7 @@ class RouterMiddleware implements MiddlewareInterface
                $request = $request->withAttribute($key, $value);
             }
         }
-        $request = $request->withAttribute('route', $route);
+        $request = $request->withAttribute(self::ATTRIBUTE_KEY, $route);
 
         return $handler->handle($request);
     }

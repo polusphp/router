@@ -7,10 +7,10 @@ use Psr\Http\Message\ServerRequestInterface;
 
 interface RouterDispatcherInterface
 {
-    const NOT_FOUND = 0;
-    const FOUND = 1;
-    const METHOD_NOT_ALLOWED = 2;
-    const METHOD_DONT_ACCEPTS = 3;
+    public const NOT_FOUND = 0;
+    public const FOUND = 1;
+    public const METHOD_NOT_ALLOWED = 2;
+    public const METHOD_DONT_ACCEPTS = 3;
 
     public function dispatch(ServerRequestInterface $request): RouteInterface;
 }
