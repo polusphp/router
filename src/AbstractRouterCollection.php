@@ -6,6 +6,9 @@ use Polus\Adr\Interfaces\Action;
 
 abstract class AbstractRouterCollection implements RouterCollection
 {
+    /**
+     * @param Action|class-string<Action> $handler
+     */
     abstract protected function add(string $verb, string $route, Action|string $handler): void;
 
     public function any(string $route, Action|string $handler): void
