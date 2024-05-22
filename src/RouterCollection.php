@@ -1,16 +1,43 @@
-<?php
-declare(strict_types=1);
+<?php declare(strict_types=1);
 
 namespace Polus\Router;
 
+use Polus\Adr\Interfaces\Action;
+
 interface RouterCollection
 {
-    public function get(string $route, $handler);
-    public function put(string $route, $handler);
-    public function post(string $route, $handler);
-    public function delete(string $route, $handler);
-    public function patch(string $route, $handler);
-    public function head(string $route, $handler);
+    /**
+     * @param Action|class-string<Action> $handler
+     */
+    public function get(string $route, Action|string $handler): void;
 
-    public function attach(string $prefix, callable $callback);
+    /**
+     * @param Action|class-string<Action> $handler
+     */
+    public function put(string $route, Action|string $handler): void;
+
+    /**
+     * @param Action|class-string<Action> $handler
+     */
+    public function post(string $route, Action|string $handler): void;
+
+    /**
+     * @param Action|class-string<Action> $handler
+     */
+    public function delete(string $route, Action|string $handler): void;
+
+    /**
+     * @param Action|class-string<Action> $handler
+     */
+    public function patch(string $route, Action|string $handler): void;
+
+    /**
+     * @param Action|class-string<Action> $handler
+     */
+    public function head(string $route, Action|string $handler): void;
+
+    /**
+     * @param callable(RouterCollection): void $callback
+     */
+    public function attach(string $prefix, callable $callback): void;
 }

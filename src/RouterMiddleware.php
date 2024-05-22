@@ -1,5 +1,4 @@
-<?php
-declare(strict_types=1);
+<?php declare(strict_types=1);
 
 namespace Polus\Router;
 
@@ -12,12 +11,9 @@ class RouterMiddleware implements MiddlewareInterface
 {
     public const ATTRIBUTE_KEY = 'polus:route';
 
-    protected RouterDispatcher $routerDispatcher;
-
-    public function __construct(RouterDispatcher $routerDispatcher)
-    {
-        $this->routerDispatcher = $routerDispatcher;
-    }
+    public function __construct(
+        protected RouterDispatcher $routerDispatcher,
+    ) {}
 
     /**
      * @inheritDoc
