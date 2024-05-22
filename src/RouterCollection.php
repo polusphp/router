@@ -9,6 +9,11 @@ interface RouterCollection
     /**
      * @param Action|class-string<Action> $handler
      */
+    public function any(string $route, Action|string $handler): void;
+
+    /**
+     * @param Action|class-string<Action> $handler
+     */
     public function get(string $route, Action|string $handler): void;
 
     /**
